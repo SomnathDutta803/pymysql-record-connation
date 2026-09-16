@@ -1,0 +1,37 @@
+create database nila;
+use nila;
+create table Emp_details(
+id int(5),
+name varchar(30),
+department varchar(50),
+salary int(7),
+gender varchar(12),
+age int(2),
+city varchar(20)
+);
+desc Emp_details;
+insert into Emp_details
+values(1001,'name1','it',35000,'male',25,'london'),
+(1002,'aaaa','it',45000,'male',29,'london'),
+(1003,'bbbb','hr',55000,'male',25,'london'),
+(1004,'cccc','finance',45000,'fmale',45,'mumbai'),
+(1005,'dddd','it',30000,'male',28,'london'),
+(1006,'eeee','hr',35000,'male',25,'london'),
+(1007,'name2','it',85000,'male',25,'mumbai'),
+(1008,'name3','hr',35000,'fmale',25,'london'),
+(1009,'name4','it',35000,'male',25,'london'),
+(1010,'name5','hr',95000,'male',25,'london');
+select*from Emp_details;
+select name ,age,department from emp_details where department="it";
+select name ,age,department from emp_details where department="hr";
+select name ,age,department from emp_details where department in ("it","hr");
+select name ,age,department from emp_details where name like"n%";
+select department ,avg(salary),avg(age) from emp_details group by department;
+select department ,avg(salary),avg(age) from emp_details group by department having department="it";
+select now();
+select curdate();
+select day(now());
+select month(now());
+select monthname(now());
+select year(now());
+SHOW VARIABLES LIKE 'datadir';
